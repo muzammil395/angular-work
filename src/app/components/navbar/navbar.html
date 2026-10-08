@@ -1,0 +1,13 @@
+<header class="site-header">
+  <div class="announcement-bar"><span>Complimentary delivery on orders over Rs. 5,000</span><span>Kind to skin. Made for real life.</span></div>
+  <nav class="navbar" aria-label="Main navigation">
+    <a class="logo" routerLink="/" aria-label="Muzammil Cosmetics home"><span class="logo-name">Muzammil</span><span class="logo-tag">COSMETICS</span></a>
+    <div class="links">
+      <a routerLink="/" routerLinkActive="active-link" [routerLinkActiveOptions]="{ exact: true }">Home</a>
+      <a routerLink="/products" routerLinkActive="active-link">Shop</a>
+      <a routerLink="/about" routerLinkActive="active-link">Our story</a>
+      <a routerLink="/contact" routerLinkActive="active-link">Contact</a>
+      <a class="cart-link" routerLink="/cart" routerLinkActive="active-link">Bag <span>{{ shop.cartCount() }}</span></a>
+    </div>
+  </nav>
+</header>

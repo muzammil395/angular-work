@@ -1,0 +1,24 @@
+<main class="contact-page">
+	<header class="contact-heading">
+		<p class="eyebrow">A LITTLE HELP, WHENEVER</p>
+		<h1>We're all ears.</h1>
+		<p>Need help choosing a formula, checking an order or finding your shade? Send us a note.</p>
+	</header>
+	<div class="contact-layout">
+		<section class="contact-details">
+			<div><span>EMAIL</span><a href="mailto:hello@muzammilcosmetics.pk">hello@muzammilcosmetics.pk</a></div>
+			<div><span>PHONE</span><a href="tel:+923001234567">+92 300 123 4567</a></div>
+			<div><span>HOURS</span><p>Monday – Saturday<br>9:00 am – 6:00 pm</p></div>
+			<p class="response-note">Most messages receive a reply within one working day.</p>
+		</section>
+		<form class="contact-form" (submit)="submit($event)">
+			@if (submitted) {
+				<div class="form-success" role="status">Thanks for trying the form. This demo is not connected to an inbox yet.</div>
+			}
+			<label>Your name<input name="name" type="text" placeholder="Name" required></label>
+			<label>Email address<input name="email" type="email" placeholder="you@example.com" required></label>
+			<label>How can we help?<textarea name="message" rows="5" placeholder="Tell us what you need..." required></textarea></label>
+			<button type="submit">Send a note <span aria-hidden="true">→</span></button>
+		</form>
+	</div>
+</main>

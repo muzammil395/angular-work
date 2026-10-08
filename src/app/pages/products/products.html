@@ -1,0 +1,47 @@
+<div class="products-page">
+  <div class="page-heading">
+    <p class="eyebrow">THE MUZAMMIL COSMETICS EDIT</p>
+    <h1>Find your feel-good formula.</h1>
+    <p class="subtitle">Skin-loving essentials, soft colour and signature scents.</p>
+  </div>
+
+  <div class="catalog-tools">
+    <label class="search-box">
+      <span>Search</span>
+      <input type="search" placeholder="Try serum, lipstick..." (input)="setSearch($event)">
+    </label>
+    <label class="category-box">
+      <span>Category</span>
+      <select [value]="category" (change)="setCategory($event)">
+        @for (categoryOption of categories; track categoryOption) {
+          <option [value]="categoryOption" [selected]="categoryOption === category">{{ categoryOption }}</option>
+        }
+      </select>
+    </label>
+    <p class="result-count">{{ visibleProducts.length }} items</p>
+  </div>
+
+  <div class="product-grid">
+    @for (product of visibleProducts; track product.id) {
+      <article class="product-card">
+        <div class="product-image-wrap">
+          <img class="product-image" [src]="product.image" [alt]="product.name" loading="lazy">
+          <span class="product-label">{{ product.label }}</span>
+        </div>
+        <p class="product-category">{{ product.category }}</p>
+        <h2>{{ product.name }}</h2>
+        <p class="product-description">{{ product.description }}</p>
+        <div class="product-actions">
+          <strong>Rs. {{ product.price | number }}</strong>
+          <button class="add-button" type="button" (click)="addToCart(product)">
+            {{ addedProductId === product.id ? 'Added' : 'Add to bag' }}
+          </button>
+        </div>
+        <p class="catalog-rating"><span aria-label="Rated 5 out of 5">★★★★★</span> {{ product.rating }} <small>({{ product.reviews }})</small></p>
+        <a class="details-link" [routerLink]="['/product-details', product.id]">Explore product <span aria-hidden="true">↗</span></a>
+      </article>
+    } @empty {
+      <p class="empty-results">No products match that search. Try another name or category.</p>
+    }
+  </div>
+</div>

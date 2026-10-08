@@ -1,0 +1,15 @@
+:host { display: block; position: relative; z-index: 5; }
+.site-header { border-bottom: 1px solid var(--line); background: rgba(255,250,249,.97); }
+.announcement-bar { display: flex; justify-content: center; gap: 26px; min-height: 29px; align-items: center; padding: 5px 12px; background: var(--brand-dark); color: white; font-size: 9px; letter-spacing: .35px; }
+.announcement-bar span + span { border-left: 1px solid rgba(255,255,255,.35); padding-left: 26px; }
+.navbar { display: flex; justify-content: space-between; align-items: center; max-width: 1320px; min-height: 76px; margin: 0 auto; padding: 0 34px; }
+.logo { display: grid; gap: 1px; color: var(--ink); text-decoration: none; }
+.logo-name { font-family: 'Playfair Display', Georgia, serif; font-size: 27px; font-weight: 600; line-height: 1; }
+.logo-tag { color: var(--brand); font-size: 8px; font-weight: 700; letter-spacing: 1.7px; }
+.links { display: flex; align-items: center; gap: 29px; }
+.links a { color: #62565a; font-size: 11px; text-decoration: none; transition: color 140ms ease; }
+.links a:hover, .links .active-link { color: var(--brand); }
+.links .active-link { text-decoration: underline; text-underline-offset: 7px; }
+.links .cart-link { display: flex; align-items: center; gap: 8px; color: var(--ink); font-weight: 700; }
+.cart-link span { display: grid; place-items: center; min-width: 21px; height: 21px; padding: 0 5px; border-radius: 50%; background: #f4dfe3; color: var(--brand-dark); font-size: 9px; }
+@media (max-width: 650px) { .announcement-bar { gap: 0; font-size: 8px; } .announcement-bar span + span { display: none; } .navbar { min-height: 67px; padding: 9px 17px; align-items: start; gap: 12px; flex-direction: column; } .logo { grid-template-columns: auto auto; align-items: baseline; gap: 8px; } .logo-name { font-size: 22px; } .links { width: 100%; justify-content: space-between; gap: 8px; } .links a { font-size: 10px; } }

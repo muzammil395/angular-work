@@ -1,0 +1,20 @@
+.contact-page { max-width: 1160px; min-height: 65vh; margin: 0 auto; padding: 58px 32px 76px; }
+.contact-heading { max-width: 650px; padding-bottom: 31px; }
+.eyebrow { margin: 0 0 12px; color: var(--brand); font-size: 10px; font-weight: 700; letter-spacing: 1.5px; }
+.contact-heading h1 { margin: 0 0 12px; font-family: 'Playfair Display', Georgia, serif; font-size: 52px; font-weight: 500; }
+.contact-heading > p:last-child { margin: 0; color: var(--muted); font-size: 13px; line-height: 1.7; }
+.contact-layout { display: grid; grid-template-columns: .8fr 1.2fr; gap: 72px; border-top: 1px solid var(--line); padding-top: 30px; }
+.contact-details > div { margin-bottom: 23px; }
+.contact-details span { display: block; margin-bottom: 6px; color: var(--brand); font-size: 9px; font-weight: 700; letter-spacing: 1.2px; }
+.contact-details a, .contact-details p { color: var(--ink); font-size: 12px; line-height: 1.7; }
+.contact-details a { text-underline-offset: 3px; }
+.contact-details p { margin: 0; }
+.contact-details .response-note { max-width: 270px; margin-top: 26px; color: var(--muted); font-size: 10px; }
+.contact-form { display: grid; gap: 16px; }
+.contact-form label { display: grid; gap: 7px; color: #55494d; font-size: 10px; font-weight: 700; }
+.contact-form input, .contact-form textarea { width: 100%; border: 1px solid var(--line); border-radius: 0; background: white; padding: 12px; color: var(--ink); font-size: 12px; resize: vertical; }
+.contact-form input { min-height: 42px; }
+.contact-form button { justify-self: start; display: flex; gap: 30px; align-items: center; min-height: 44px; border: 0; padding: 0 17px; background: var(--brand); color: white; font-size: 11px; font-weight: 700; cursor: pointer; }
+.contact-form button:hover { background: var(--brand-dark); }
+.form-success { border-left: 3px solid var(--brand); padding: 12px 14px; background: var(--brand-soft); color: var(--brand-dark); font-size: 11px; line-height: 1.5; }
+@media (max-width: 700px) { .contact-page { padding: 41px 20px 55px; } .contact-heading h1 { font-size: 41px; } .contact-layout { grid-template-columns: 1fr; gap: 16px; } }

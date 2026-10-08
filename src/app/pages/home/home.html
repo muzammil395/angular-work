@@ -1,0 +1,57 @@
+<main class="beauty-home">
+  <section class="beauty-hero">
+    <div class="hero-copy">
+      <p class="eyebrow">SKIN FIRST. ALWAYS.</p>
+      <h1>Good skin.<br><em>Good mood.</em></h1>
+      <p>Feel-good formulas and little colour rituals, made for your real life.</p>
+      <a routerLink="/products" class="hero-cta">Shop the beauty edit <span aria-hidden="true">↗</span></a>
+      <div class="hero-proof"><span>Thoughtful ingredients</span><span>Made for everyday</span></div>
+    </div>
+    <div class="hero-visual">
+      <img src="https://images.unsplash.com/photo-1596462502278-27bfdc403348?auto=format&fit=crop&w=1400&q=88" alt="A curated edit of makeup and skincare essentials">
+      <div class="hero-caption"><span>THE DAILY RITUAL</span><strong>Small moments, softer skin.</strong></div>
+      <div class="hero-stamp">A LITTLE<br>MORE YOU</div>
+    </div>
+  </section>
+
+  <nav class="category-ribbon" aria-label="Shop by beauty category">
+    <a routerLink="/products" [queryParams]="{ category: 'Skincare' }"><span>01</span> Skincare <b>↗</b></a>
+    <a routerLink="/products" [queryParams]="{ category: 'Makeup' }"><span>02</span> Makeup <b>↗</b></a>
+    <a routerLink="/products" [queryParams]="{ category: 'Sun care' }"><span>03</span> Sun care <b>↗</b></a>
+    <a routerLink="/products" [queryParams]="{ category: 'Fragrance' }"><span>04</span> Fragrance <b>↗</b></a>
+  </nav>
+
+  <section class="home-products">
+    <div class="section-heading">
+      <div><p class="eyebrow">LOVED FOR A REASON</p><h2>The beauty bestsellers</h2></div>
+      <a routerLink="/products">Explore everything <span aria-hidden="true">→</span></a>
+    </div>
+    <div class="featured-grid">
+      @for (product of shop.products.slice(0, 4); track product.id) {
+        <article class="featured-product">
+          <a class="featured-image" [routerLink]="['/product-details', product.id]">
+            <img [src]="product.image" [alt]="product.name" loading="lazy">
+            <span>{{ product.label }}</span>
+          </a>
+          <div class="featured-meta">
+            <div><p>{{ product.category }} · {{ product.volume }}</p><h3>{{ product.name }}</h3></div>
+            <strong>Rs. {{ product.price | number }}</strong>
+          </div>
+          <p class="product-rating"><span aria-label="Rated 5 out of 5">★★★★★</span> {{ product.rating }} ({{ product.reviews }})</p>
+          <button type="button" (click)="addToCart(product)">Add to bag</button>
+        </article>
+      }
+    </div>
+  </section>
+
+  <section class="ritual-feature">
+    <div class="ritual-image"><img src="https://images.unsplash.com/photo-1601049541289-9b1b7bbbfe19?auto=format&fit=crop&w=1000&q=85" alt="A simple, nourishing skincare ritual"></div>
+    <div class="ritual-copy"><p class="eyebrow">LESS, BUT LOVELIER</p><h2>Your routine should feel like a deep breath.</h2><p>Thoughtful essentials, easy textures and formulas that meet you where you are.</p><a routerLink="/about">Get to know us <span aria-hidden="true">→</span></a></div>
+  </section>
+
+  <section class="service-strip" aria-label="Muzammil Cosmetics services">
+    <div><span class="service-icon">01</span><strong>Beauty, thoughtfully picked</strong><span>Good-feeling essentials for every day.</span></div>
+    <div><span class="service-icon">02</span><strong>Delivery, made simple</strong><span>Carefully packed and sent to your door.</span></div>
+    <div><span class="service-icon">03</span><strong>Real help, lovely people</strong><span>Questions are always welcome.</span></div>
+  </section>
+</main>

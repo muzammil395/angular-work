@@ -1,0 +1,17 @@
+<main class="details-page">
+  <a class="back-link" routerLink="/products">← Back to products</a>
+  <div class="details-layout">
+    <div class="details-image"><img [src]="product.image" [alt]="product.name"></div>
+    <section class="details-content">
+      <p class="eyebrow">{{ product.category }} · {{ product.label }}</p>
+      <h1>{{ product.name }}</h1>
+      <p class="details-rating"><span aria-label="Rated 5 out of 5">★★★★★</span> {{ product.rating }} <small>({{ product.reviews }} reviews)</small></p>
+      <h2>Rs. {{ product.price | number }}</h2>
+      <p class="description">{{ product.description }}</p>
+      <p class="size-note">SIZE <strong>{{ product.volume }}</strong></p>
+      <p class="availability"><span aria-hidden="true">●</span> In stock and ready to ship</p>
+      <button type="button" (click)="addToCart()">{{ added ? 'Added to bag' : 'Add to bag' }}</button>
+      <p class="delivery-note">Thoughtfully packed · Easy support · Made for your everyday ritual</p>
+    </section>
+  </div>
+</main>
